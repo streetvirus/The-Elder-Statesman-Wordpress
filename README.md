@@ -1,2 +1,2 @@
-The-Elder-Statesman-Wordpress
-=============================
+The Elder Statesman Wordpress Blog
+==================================
