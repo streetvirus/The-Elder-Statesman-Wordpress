@@ -1,0 +1,80 @@
+// Base
+// --------------------------------------------------
+
+* {
+  box-sizing: border-box;
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: $body-font-stack; 
+  font-weight: $font-weight-400; 
+  font-size:   $body-font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { 
+  font-family: $header-font-stack;
+  font-weight: $font-weight-400;
+  line-height: 1.25em;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
+
+html { 
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: $elder-sky-blue;
+  color: $white;
+  background-image: url('./images/sky-background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+a, 
+a:active, 
+a:visited { 
+  color: $white; 
+  text-decoration:none; 
+  transition: color 100ms linear 0, opacity 100ms linear 0;
+}
+
+a {
+  &:hover, 
+  &:active {
+    color: $white;
+    outline: none;
+    text-decoration: underline;
+  }
+  &:link {
+    -webkit-tap-highlight-color: $white;
+  }
+}
+
+small { 
+  font-size: $font-size-small;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+p {
+  margin: 0 0 $line-height-computed;
+}

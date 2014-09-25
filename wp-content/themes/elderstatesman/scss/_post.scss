@@ -1,0 +1,21 @@
+// Content on the individual post page
+
+.post {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+iframe[src*="youtube.com/embed"] {
+  display:block;
+  width: 100%;
+  margin: 0 auto;
+  max-height: 250px;
+}
+
+@media screen and (min-width: $screen-ipad-portrait) {
+  iframe[src*="youtube.com/embed"] { 
+    max-height: none;
+  }
+}

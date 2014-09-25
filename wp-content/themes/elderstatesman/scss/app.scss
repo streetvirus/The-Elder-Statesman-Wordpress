@@ -1,0 +1,28 @@
+/*!
+Theme Name: The Elder Statesman
+Author: Streetvirus
+Author URI: http://www.streetvirus.com
+Description: Custom theme for The Elder Statesman
+Version: 1.0
+NOTE: Theme stylesheet is compiled using sass.  Don't edit style.css in the theme directory, it will be overwritten.
+*/
+
+@import "variables";
+@import "fonts";
+
+@import "reset";
+
+@import "base";
+@import "grid";
+@import "layout";
+
+@import "nav";
+@import "header";
+
+@import "post";
+@import "wp";
+
+@import "page_home";
+
+// Import responsive stuff last
+@import "responsive";

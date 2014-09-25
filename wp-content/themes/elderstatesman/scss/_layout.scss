@@ -1,0 +1,178 @@
+// Layout
+// --------------------------------------------------
+.wrapper {
+  margin-bottom: -$footer-height; /* neg footer height */
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+
+.page { 
+  padding: 0 40px !important;
+}
+
+.page-print,
+.page-empty,
+.page-popup { 
+  background: $white; 
+  padding: 25px 30px; 
+  text-align: left;
+}
+
+
+.main-container {
+  padding-bottom:40px;
+}
+
+.main { 
+  min-height:400px; 
+  text-align: left;
+  position: relative;
+  
+  p {
+    line-height: 20px;
+  }
+
+}
+
+
+// Base Columns
+// --------------------------------------------------
+.col-left,
+.col-right,
+.col-main {
+  position: relative;
+  z-index: 1;
+}
+
+.col-left {
+  margin-top: 0;
+  min-height: 10px;
+  z-index: 2;
+}
+
+// 1 Column Layout
+// --------------------------------------------------
+.col1-layout .col-main { 
+  float: none; 
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+
+// 2 Columns Layout
+// --------------------------------------------------
+
+.col2-right-layout .col-main {
+  max-width:722px;
+  padding-bottom: 30px;
+}
+
+.col2-left-layout .col-main {
+  max-width:722px;
+  padding-bottom: 30px;
+}
+
+body.fixed .col2-left-layout .col-main {
+  max-width: none;
+  padding-bottom: 0;
+}
+
+.col2-left-layout .col-left{
+  max-width:278px;
+}
+body.fixed .col2-left-layout .col-main {
+  left: 16.667%;
+}
+
+.col-buffer{
+  min-height:1px;
+  width:21%;
+}
+
+// 3 Columns Layout
+// --------------------------------------------------
+.col3-layout {
+  .col-main { 
+    width:475px; 
+    margin-left:15px;
+  }
+  
+  .col-wrapper { 
+    float:left; 
+    width:687px;
+    
+    .col-main {
+      float:right;      
+    }
+  }
+}
+
+
+// Content Columns
+// --------------------------------------------------
+.col2-set {
+  .col-1 { 
+    float:left;
+    width:48.5%;
+  }
+  
+  .col-2 { 
+    float:right;
+    width:48.5%;
+  }
+  
+  .col-narrow { 
+    width:32%;
+  }
+  
+  .col-wide { 
+    width:65%;
+  }
+}
+
+.col3-set {
+  .col-1 { 
+    float:left;
+    width:32%;
+  }
+
+  .col-2 { 
+    float:left; 
+    width:32%; 
+    margin-left:2%;
+  }
+  
+  .col-3 { 
+    float:right; 
+    width:32%; 
+  }
+}
+
+.col4-set {
+  .col-1 { 
+    float:left; 
+    width:23.5%;
+  }
+  
+  .col-2 { 
+    float:left; 
+    width:23.5%; 
+    margin:0 2%; 
+  }
+
+  .col-3 {
+    float:left;
+    width:23.5%;
+  }
+  
+  .col-4 { 
+    float:right; 
+    width:23.5%; 
+  }
+}

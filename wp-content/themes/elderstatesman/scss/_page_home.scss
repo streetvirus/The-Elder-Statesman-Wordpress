@@ -1,0 +1,38 @@
+.home-post {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+
+  @for $i from 1 through 4 {
+    &:nth-child(n + #{$i}) {
+      z-index: 10 + $i;      
+    }
+  }
+}
+
+.home-post-link {
+  display: inline-block;
+  max-width: 100%;
+  border: 12px solid $white;
+  transition: border-color 100ms linear;
+
+  &:hover, 
+  &:focus {
+    border-color: #0047A0;
+    transition: border-color 200ms ease-in-out;
+  }
+}
+
+.home-post-image {
+  display: block;
+  max-width: 100%;
+}
+
+@media screen and (min-width: $screen-ipad-portrait) {
+  .home-post {
+    width: 40%;
+    text-align: none;
+  }
+}

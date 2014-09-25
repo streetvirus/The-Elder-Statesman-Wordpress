@@ -1,0 +1,575 @@
+/*!
+Theme Name: The Elder Statesman
+Author: Streetvirus
+Author URI: http://www.streetvirus.com
+Description: Custom theme for The Elder Statesman
+Version: 1.0
+NOTE: Theme stylesheet is compiled using sass.  Don't edit style.css in the theme directory, it will be overwritten.
+*/
+@font-face {
+  font-family: "ITC Franklin Gothic Book";
+  src: url("./fonts/ITCFranklinGothicW01-Bk.eot?#iefix");
+  src: url("./fonts/ITCFranklinGothicW01-Bk.eot?#iefix") format("eot"), url("./fonts/ITCFranklinGothicW01-Bk.woff") format("woff"), url("./fonts/ITCFranklinGothicW01-Bk.ttf") format("truetype"), url("./fonts/ITCFranklinGothicW01-Bk.svg#ITCFranklinGothicW01-Bk") format("svg"); }
+
+@font-face {
+  font-family: "ITC Franklin Gothic Demi";
+  src: url("./fonts/ITCFranklinGothicW01-Dm.eot?#iefix");
+  src: url("./fonts/ITCFranklinGothicW01-Dm.eot?#iefix") format("eot"), url("./fonts/ITCFranklinGothicW01-Dm.woff") format("woff"), url("./fonts/ITCFranklinGothicW01-Dm.ttf") format("truetype"), url("./fonts/ITCFranklinGothicW01-Dm.svg#ITCFranklinGothicW01-Dm") format("svg"); }
+
+@font-face {
+  font-family: "ITC Franklin Gothic Medium";
+  src: url("./fonts/ITCFranklinGothicW01-Md.eot?#iefix");
+  src: url("./fonts/ITCFranklinGothicW01-Md.eot?#iefix") format("eot"), url("./fonts/ITCFranklinGothicW01-Md.woff") format("woff"), url("./fonts/ITCFranklinGothicW01-Md.ttf") format("truetype"), url("./fonts/ITCFranklinGothicW01-Md.svg#ITCFranklinGothicW01-Md") format("svg"); }
+
+@font-face {
+  font-family: "Garamond Premier Roman";
+  src: url("./fonts/GaramondPrmrRoman.eot?#iefix");
+  src: url("./fonts/GaramondPrmrRoman.eot?#iefix") format("eot"), url("./fonts/GaramondPrmrRoman.woff") format("woff"), url("./fonts/GaramondPrmrRoman.ttf") format("truetype"), url("./fonts/GaramondPrmrRoman.svg#GaramondPrmrRoman") format("svg"); }
+
+@font-face {
+  font-family: "Garamond Premier Medium";
+  src: url("./fonts/GaramondPrmrMd.eot?#iefix");
+  src: url("./fonts/GaramondPrmrMd.eot?#iefix") format("eot"), url("./fonts/GaramondPrmrMd.woff") format("woff"), url("./fonts/GaramondPrmrMd.ttf") format("truetype"), url("./fonts/GaramondPrmrMd.svg#GaramondPrmrMd") format("svg"); }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+  *:before, *:after {
+    box-sizing: border-box; }
+
+body {
+  font-family: "Garamond Premier Medium", Georgia, serif;
+  font-weight: 400;
+  font-size: 15px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ITC Franklin Gothic Demi", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  line-height: 1.25em; }
+
+h1, .h1 {
+  font-size: 39px; }
+
+h2, .h2 {
+  font-size: 32px; }
+
+h3, .h3 {
+  font-size: 26px; }
+
+h4, .h4 {
+  font-size: 19px; }
+
+h5, .h5 {
+  font-size: 15px; }
+
+h6, .h6 {
+  font-size: 13px; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #276CB9;
+  color: #FFF;
+  background-image: url('./images/sky-background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased; }
+
+a, a:active, a:visited {
+  color: #FFF;
+  text-decoration: none;
+  -webkit-transition: color 100ms linear 0, opacity 100ms linear 0;
+  transition: color 100ms linear 0, opacity 100ms linear 0; }
+
+a:hover, a:active {
+  color: #FFF;
+  outline: none;
+  text-decoration: underline; }
+a:link {
+  -webkit-tap-highlight-color: #FFF; }
+
+small {
+  font-size: 12.75px; }
+
+ol, ul {
+  list-style: none; }
+
+p {
+  margin: 0 0 21px; }
+
+/*
+  Simple Grid
+  Learn More - http://dallasbass.com/simple-grid-a-lightweight-responsive-css-grid/
+  Project Page - http://thisisdallas.github.com/Simple-Grid/
+  Author - Dallas Bass
+  Site - dallasbass.com
+*/
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+body {
+  margin: 0px; }
+
+[class*='col-'] {
+  float: left;
+  padding-right: 20px; }
+
+[class*='col-']:last-of-type {
+  padding-right: 0px; }
+
+.grid {
+  width: 100%;
+  /*max-width: 1320px;*/
+  min-width: 755px;
+  margin: 0 auto;
+  /*overflow: hidden;*/
+  padding: 0 20px; }
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.grid-pad {
+  padding: 20px 0 0px 20px; }
+
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px; }
+
+.push-right {
+  float: right; }
+
+/* Content Columns */
+.col-1-1 {
+  width: 100%; }
+
+.col-2-3, .col-8-12 {
+  width: 66.66%; }
+
+.col-3-5 {
+  width: 60%; }
+
+.col-1-2, .col-6-12 {
+  width: 50%; }
+
+.col-2-5 {
+  width: 40%; }
+
+.col-1-3, .col-4-12 {
+  width: 33.33%; }
+
+.col-1-4, .col-3-12 {
+  width: 25%; }
+
+.col-1-5 {
+  width: 20%; }
+
+.col-1-6, .col-2-12 {
+  width: 16.667%; }
+
+.col-1-7 {
+  width: 14.28%; }
+
+.col-1-8 {
+  width: 12.5%; }
+
+.col-1-9 {
+  width: 11.1%; }
+
+.col-1-10 {
+  width: 10%; }
+
+.col-1-11 {
+  width: 9.09%; }
+
+.col-1-12 {
+  width: 8.33%; }
+
+/* Layout Columns */
+.col-11-12 {
+  width: 91.66%; }
+
+.col-10-12 {
+  width: 83.333%; }
+
+.col-9-12 {
+  width: 75%; }
+
+.col-5-12 {
+  width: 41.66%; }
+
+.col-7-12 {
+  width: 58.33%; }
+
+@media handheld, only screen and (max-width: 768px) {
+  .grid {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px; }
+  [class*='col-'] {
+    width: auto;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px; }
+  .popup-size-guide-left {
+    text-align: center; }
+  [class*='col-']:last-of-type {
+    padding-right: 20px; } }
+
+.wrapper {
+  margin-bottom: -40px;
+  /* neg footer height */
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2; }
+
+.page {
+  padding: 0 40px !important; }
+
+.page-print, .page-empty, .page-popup {
+  background: #FFF;
+  padding: 25px 30px;
+  text-align: left; }
+
+.main-container {
+  padding-bottom: 40px; }
+
+.main {
+  min-height: 400px;
+  text-align: left;
+  position: relative; }
+  .main p {
+    line-height: 20px; }
+
+.col-left, .col-right, .col-main {
+  position: relative;
+  z-index: 1; }
+
+.col-left {
+  margin-top: 0;
+  min-height: 10px;
+  z-index: 2; }
+
+.col1-layout .col-main {
+  float: none;
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto; }
+
+.col2-right-layout .col-main {
+  max-width: 722px;
+  padding-bottom: 30px; }
+
+.col2-left-layout .col-main {
+  max-width: 722px;
+  padding-bottom: 30px; }
+
+body.fixed .col2-left-layout .col-main {
+  max-width: none;
+  padding-bottom: 0; }
+
+.col2-left-layout .col-left {
+  max-width: 278px; }
+
+body.fixed .col2-left-layout .col-main {
+  left: 16.667%; }
+
+.col-buffer {
+  min-height: 1px;
+  width: 21%; }
+
+.col3-layout .col-main {
+  width: 475px;
+  margin-left: 15px; }
+.col3-layout .col-wrapper {
+  float: left;
+  width: 687px; }
+  .col3-layout .col-wrapper .col-main {
+    float: right; }
+
+.col2-set .col-1 {
+  float: left;
+  width: 48.5%; }
+.col2-set .col-2 {
+  float: right;
+  width: 48.5%; }
+.col2-set .col-narrow {
+  width: 32%; }
+.col2-set .col-wide {
+  width: 65%; }
+
+.col3-set .col-1 {
+  float: left;
+  width: 32%; }
+.col3-set .col-2 {
+  float: left;
+  width: 32%;
+  margin-left: 2%; }
+.col3-set .col-3 {
+  float: right;
+  width: 32%; }
+
+.col4-set .col-1 {
+  float: left;
+  width: 23.5%; }
+.col4-set .col-2 {
+  float: left;
+  width: 23.5%;
+  margin: 0 2%; }
+.col4-set .col-3 {
+  float: left;
+  width: 23.5%; }
+.col4-set .col-4 {
+  float: right;
+  width: 23.5%; }
+
+.left-nav {
+  font-family: "ITC Franklin Gothic Demi", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 0.8em; }
+  .left-nav .nav-button {
+    display: none;
+    width: 100%;
+    padding: 20px 0;
+    text-transform: uppercase;
+    border: 1px solid #FFF;
+    font-size: 1.25em;
+    text-align: center;
+    position: relative;
+    cursor: pointer; }
+  .left-nav .nav-button:hover {
+    background: #000; }
+  .left-nav .nav-button-inner {
+    position: relative; }
+    .left-nav .nav-button-inner .menu-icon {
+      width: 30px;
+      clear: both;
+      display: inline-block;
+      margin-right: 5px; }
+      .left-nav .nav-button-inner .menu-icon div {
+        height: 2px;
+        background: #FFF;
+        width: 100%;
+        float: left;
+        margin-bottom: 6px; }
+      .left-nav .nav-button-inner .menu-icon div:last-child {
+        margin-bottom: 0; }
+  .left-nav > ul {
+    font-size: 1.15em; }
+  .left-nav ul {
+    list-style: none; }
+    .left-nav ul li {
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      position: relative; }
+      .left-nav ul li span.toggle {
+        cursor: pointer; }
+      .left-nav ul li a {
+        text-decoration: none; }
+      .left-nav ul li .subnav-container {
+        margin-top: 7px;
+        margin-left: 10px; }
+        .left-nav ul li .subnav-container .subnav a {
+          opacity: 0.8; }
+        .left-nav ul li .subnav-container .subnav a:hover {
+          opacity: 1; }
+        .left-nav ul li .subnav-container .current > a {
+          opacity: 1; }
+        .left-nav ul li .subnav-container .subnav-container {
+          display: none; }
+    .left-nav ul li:last-child {
+      margin-bottom: 0; }
+    .left-nav ul .current > a {
+      opacity: 1;
+      text-decoration: underline; }
+    .left-nav ul .active .subnav-container {
+      display: block; }
+
+@media screen and (max-width: 768px) {
+  .left-nav {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding-bottom: 20px; }
+    .left-nav .nav-button {
+      display: block; }
+    .left-nav .nav-button:hover {
+      background: transparent; }
+    .left-nav > ul {
+      border: 1px solid #FFF;
+      border-top: 0;
+      display: none;
+      padding: 7px 0; }
+      .left-nav > ul li {
+        font-size: 0.85em;
+        margin-bottom: 0;
+        padding: 7px 0; }
+        .left-nav > ul li .subnav-container {
+          margin-top: 0; } }
+
+@media screen and (min-width: 769px) {
+  .col-left {
+    min-height: 100px; }
+  .left-nav {
+    position: fixed;
+    -webkit-backface-visibility: hidden; }
+  ul {
+    display: block !important; } }
+
+.header-container {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  z-index: 2;
+  font-family: "ITC Franklin Gothic Demi", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 0.8em; }
+
+header {
+  margin: 0 auto;
+  padding: 14px 0;
+  position: relative;
+  z-index: 10; }
+  header .logo {
+    width: 100%;
+    text-align: center; }
+  header .linked-logo {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    max-width: 350px;
+    background: url('./images/logo-white.png') no-repeat center transparent;
+    background-size: contain; }
+
+@media screen and (min-width: 768px) {
+  .header-container header .logo {
+    text-align: left; }
+  .header-container {
+    height: 92px; }
+  .linked-logo {
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); } }
+
+.post img {
+  max-width: 100%;
+  height: auto; }
+
+iframe[src*="youtube.com/embed"] {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  max-height: 250px; }
+
+@media screen and (min-width: 768px) {
+  iframe[src*="youtube.com/embed"] {
+    max-height: none; } }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.home-post {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center; }
+  .home-post:nth-child(n+1) {
+    z-index: 11; }
+  .home-post:nth-child(n+2) {
+    z-index: 12; }
+  .home-post:nth-child(n+3) {
+    z-index: 13; }
+  .home-post:nth-child(n+4) {
+    z-index: 14; }
+
+.home-post-link {
+  display: inline-block;
+  max-width: 100%;
+  border: 12px solid #FFF;
+  -webkit-transition: border-color 100ms linear;
+  transition: border-color 100ms linear; }
+  .home-post-link:hover, .home-post-link:focus {
+    border-color: #0047A0;
+    -webkit-transition: border-color 200ms ease-in-out;
+    transition: border-color 200ms ease-in-out; }
+
+.home-post-image {
+  display: block;
+  max-width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .home-post {
+    width: 40%;
+    text-align: none; } }
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin-bottom: 0; }
+  .page {
+    padding: 0 15px !important; }
+  .col2-left-layout .col-left {
+    max-width: none; } }
+
+@media screen and (max-width: 1024px) {
+  .main-container {
+    margin-top: 0; }
+  .left-nav {
+    margin-top: 0; } }

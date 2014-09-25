@@ -1,0 +1,28 @@
+@media screen and (max-width: $screen-ipad-portrait) {
+  .wrapper {
+    margin-bottom: 0;
+  }
+  
+  .page {
+    padding: 0 15px !important;
+  }
+
+  .col2-left-layout {
+    .col-left {
+      max-width: none;
+    }
+  }
+
+}
+
+@media screen and (max-width: $screen-ipad-landscape) {
+  .main-container {
+    margin-top: 0;
+  }
+  .col-left {
+    // min-height:0;
+  }
+  .left-nav {
+    margin-top: 0;
+  }
+}

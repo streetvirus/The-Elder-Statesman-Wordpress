@@ -1,0 +1,42 @@
+$font-path: './fonts';
+
+@font-face{
+font-family: "ITC Franklin Gothic Book";
+  src:url("#{$font-path}/ITCFranklinGothicW01-Bk.eot?#iefix");
+  src:url("#{$font-path}/ITCFranklinGothicW01-Bk.eot?#iefix") format("eot"),
+      url("#{$font-path}/ITCFranklinGothicW01-Bk.woff")       format("woff"),
+      url("#{$font-path}/ITCFranklinGothicW01-Bk.ttf")        format("truetype"),
+      url("#{$font-path}/ITCFranklinGothicW01-Bk.svg#ITCFranklinGothicW01-Bk") format("svg");
+}
+@font-face{
+font-family: "ITC Franklin Gothic Demi";
+  src:url("#{$font-path}/ITCFranklinGothicW01-Dm.eot?#iefix");
+  src:url("#{$font-path}/ITCFranklinGothicW01-Dm.eot?#iefix") format("eot"),
+      url("#{$font-path}/ITCFranklinGothicW01-Dm.woff")       format("woff"),
+      url("#{$font-path}/ITCFranklinGothicW01-Dm.ttf")        format("truetype"),
+      url("#{$font-path}/ITCFranklinGothicW01-Dm.svg#ITCFranklinGothicW01-Dm") format("svg");
+}
+@font-face{
+font-family: "ITC Franklin Gothic Medium";
+  src:url("#{$font-path}/ITCFranklinGothicW01-Md.eot?#iefix");
+  src:url("#{$font-path}/ITCFranklinGothicW01-Md.eot?#iefix") format("eot"),
+      url("#{$font-path}/ITCFranklinGothicW01-Md.woff")       format("woff"),
+      url("#{$font-path}/ITCFranklinGothicW01-Md.ttf")        format("truetype"),
+      url("#{$font-path}/ITCFranklinGothicW01-Md.svg#ITCFranklinGothicW01-Md") format("svg");
+}
+@font-face{
+font-family: "Garamond Premier Roman";
+  src:url("#{$font-path}/GaramondPrmrRoman.eot?#iefix");
+  src:url("#{$font-path}/GaramondPrmrRoman.eot?#iefix") format("eot"),
+      url("#{$font-path}/GaramondPrmrRoman.woff")       format("woff"),
+      url("#{$font-path}/GaramondPrmrRoman.ttf")        format("truetype"),
+      url("#{$font-path}/GaramondPrmrRoman.svg#GaramondPrmrRoman") format("svg");
+}
+@font-face{
+font-family: "Garamond Premier Medium";
+  src:url("#{$font-path}/GaramondPrmrMd.eot?#iefix");
+  src:url("#{$font-path}/GaramondPrmrMd.eot?#iefix") format("eot"),
+      url("#{$font-path}/GaramondPrmrMd.woff")       format("woff"),
+      url("#{$font-path}/GaramondPrmrMd.ttf")        format("truetype"),
+      url("#{$font-path}/GaramondPrmrMd.svg#GaramondPrmrMd") format("svg");
+}

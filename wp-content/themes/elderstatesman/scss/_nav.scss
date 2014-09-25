@@ -1,0 +1,151 @@
+// Left Navigation
+// --------------------------------------------------
+
+.left-nav {
+    font-family:$font-franklin;
+    font-size: 0.8em;
+
+  .nav-button {
+    display: none;
+      width: 100%;
+      padding: 20px 0;
+      text-transform: uppercase;
+      border: 1px solid $white;
+      font-size: 1.25em;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+  }
+  .nav-button:hover {
+      background: #000;
+  }
+  .nav-button.active {
+  }
+  .nav-button-inner {
+      position: relative;
+      
+      .menu-icon {
+          width: 30px;
+          clear: both;
+          display: inline-block;
+          margin-right: 5px;
+          
+          div {
+              height: 2px;
+              background: $white;
+              width: 100%;
+              float: left;
+              margin-bottom: 6px;
+          }
+          div:last-child {
+              margin-bottom: 0;
+          }
+      }
+  }
+
+    > ul {
+      font-size: 1.15em;
+    }
+    ul {
+      list-style: none;
+
+    li {
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      position: relative;
+
+      span.toggle {
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .subnav-container {
+        // display: none;
+        margin-top: 7px;
+        margin-left: 10px;
+
+        .subnav {
+          a {
+            opacity: 0.8;
+          }
+          a:hover {
+            opacity: 1;
+          }
+        }
+        .current {
+          > a {
+            opacity: 1;
+          }
+        }
+
+        .subnav-container {
+          display: none; // Hide child subnavs
+        }
+      }
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+    .current {
+
+      > a {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+    .active {
+      .subnav-container {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-ipad-portrait) {
+  .left-nav {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding-bottom: 20px;
+  
+    .nav-button {
+      display: block;
+    }
+    .nav-button:hover {
+      background: transparent;
+    }
+  
+    > ul {
+      border: 1px solid $white;
+      border-top: 0;
+      display: none;
+      padding: 7px 0;
+  
+      li {
+        font-size: .85em;
+        margin-bottom: 0;
+        padding: 7px 0;
+    
+        .subnav-container {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-ipad-portrait + 1) {
+  .col-left {
+    min-height: 100px;
+  }
+  .left-nav {
+    position: fixed;
+    -webkit-backface-visibility: hidden;
+  }
+  ul {
+    display: block !important;
+  }
+}

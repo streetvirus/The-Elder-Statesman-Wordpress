@@ -1,0 +1,49 @@
+// Fonts
+// --------------------------------------------------
+$font-franklin:                "ITC Franklin Gothic Demi", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-garamond:                "Garamond Premier Medium", Georgia, serif;
+$font-weight-400:             400;
+$font-weight-600:             600;
+$font-weight-700:             700;
+
+$font-size-default:           15px;
+$font-size-small:             $font-size-default * 0.85;
+
+$body-font-size:              15px;
+$body-font-stack:             $font-garamond;
+$header-font-stack:           $font-franklin;
+
+// Typography
+// --------------------------------------------------
+$line-height-base:            1.428571429;
+$line-height-computed:        floor(($font-size-default * $line-height-base));
+
+$font-size-h1:                floor(($font-size-default * 2.6)); // ~36px
+$font-size-h2:                floor(($font-size-default * 2.15)); // ~30px
+$font-size-h3:                ceil(($font-size-default * 1.7)); // ~24px
+$font-size-h4:                ceil(($font-size-default * 1.25)); // ~18px
+$font-size-h5:                $font-size-default;
+$font-size-h6:                ceil(($font-size-default * 0.85)); // ~12px
+
+// Colors
+// --------------------------------------------------
+$white:                       #FFF;
+$black:                       #000;
+
+$elder-sky-blue:              #276CB9;
+
+// Layout
+// --------------------------------------------------
+$siteWidth:                   1280px;
+$siteWidthHD:                 1920px;
+
+$footer-height:               40px;
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+$screen-iphone-portrait:      320px;
+$screen-iphone-landscape:     480px;
+$screen-ipad-portrait:        768px;
+$smaller-than-ipad-landscape: 1023px;
+$screen-ipad-landscape:       $smaller-than-ipad-landscape + 1px;
