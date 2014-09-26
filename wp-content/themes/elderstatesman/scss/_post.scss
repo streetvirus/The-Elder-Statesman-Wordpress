@@ -7,7 +7,26 @@
   }
 }
 
-iframe[src*="youtube.com/embed"] {
+.post-title {
+  margin-bottom: 40px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $white;
+  border-color: transparentize($white, 0.7);
+  text-align: center;
+}
+
+.post-meta {
+  margin-top: -26px;
+  font-size: $font-size-small;
+  text-align: center;
+}
+
+.post-content {
+  margin: 20px 0;
+}
+
+iframe[src*="youtube.com/embed"],
+iframe[src*="player.vimeo"] {
   display:block;
   width: 100%;
   margin: 0 auto;
@@ -15,7 +34,8 @@ iframe[src*="youtube.com/embed"] {
 }
 
 @media screen and (min-width: $screen-ipad-portrait) {
-  iframe[src*="youtube.com/embed"] { 
+  iframe[src*="youtube.com/embed"],
+  iframe[src*="player.vimeo"] { 
     max-height: none;
   }
 }

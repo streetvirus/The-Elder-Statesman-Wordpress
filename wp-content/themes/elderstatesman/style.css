@@ -136,6 +136,9 @@ ol, ul {
 p {
   margin: 0 0 21px; }
 
+b, strong {
+  font-weight: bold; }
+
 /*
   Simple Grid
   Learn More - http://dallasbass.com/simple-grid-a-lightweight-responsive-css-grid/
@@ -402,7 +405,7 @@ body.fixed .col2-left-layout .col-main {
         margin-bottom: 6px; }
       .left-nav .nav-button-inner .menu-icon div:last-child {
         margin-bottom: 0; }
-  .left-nav > ul {
+  .left-nav ul.menu {
     font-size: 1.15em; }
   .left-nav ul {
     list-style: none; }
@@ -421,13 +424,13 @@ body.fixed .col2-left-layout .col-main {
           opacity: 0.8; }
         .left-nav ul li .subnav-container .subnav a:hover {
           opacity: 1; }
-        .left-nav ul li .subnav-container .current > a {
+        .left-nav ul li .subnav-container .current > a, .left-nav ul li .subnav-container .current-menu-item > a {
           opacity: 1; }
         .left-nav ul li .subnav-container .subnav-container {
           display: none; }
     .left-nav ul li:last-child {
       margin-bottom: 0; }
-    .left-nav ul .current > a {
+    .left-nav ul .current > a, .left-nav ul .current-menu-item > a {
       opacity: 1;
       text-decoration: underline; }
     .left-nav ul .active .subnav-container {
@@ -443,16 +446,16 @@ body.fixed .col2-left-layout .col-main {
       display: block; }
     .left-nav .nav-button:hover {
       background: transparent; }
-    .left-nav > ul {
+    .left-nav > ul, .left-nav ul.menu {
       border: 1px solid #FFF;
       border-top: 0;
       display: none;
       padding: 7px 0; }
-      .left-nav > ul li {
+      .left-nav > ul li, .left-nav ul.menu li {
         font-size: 0.85em;
         margin-bottom: 0;
         padding: 7px 0; }
-        .left-nav > ul li .subnav-container {
+        .left-nav > ul li .subnav-container, .left-nav ul.menu li .subnav-container {
           margin-top: 0; } }
 
 @media screen and (min-width: 769px) {
@@ -504,26 +507,59 @@ header {
   max-width: 100%;
   height: auto; }
 
-iframe[src*="youtube.com/embed"] {
+.post-title {
+  margin-bottom: 40px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #FFF;
+  border-color: rgba(255, 255, 255, 0.3);
+  text-align: center; }
+
+.post-meta {
+  margin-top: -26px;
+  font-size: 12.75px;
+  text-align: center; }
+
+.post-content {
+  margin: 20px 0; }
+
+iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
   display: block;
   width: 100%;
   margin: 0 auto;
   max-height: 250px; }
 
 @media screen and (min-width: 768px) {
-  iframe[src*="youtube.com/embed"] {
+  iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
     max-height: none; } }
 
 .alignleft {
-  float: left; }
+  float: left;
+  margin-right: 21px;
+  margin-bottom: 21px; }
 
 .alignright {
-  float: right; }
+  float: right;
+  margin-left: 21px;
+  margin-bottom: 21px; }
 
 .aligncenter {
   display: block;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  text-align: center; }
+
+.wp-caption:not(.aligncenter) {
+  display: inline-block; }
+
+.wp-caption-text {
+  text-align: center;
+  font-size: 12.75px;
+  margin-bottom: 20px; }
+  .wp-caption-text p {
+    margin-bottom: 0; }
+
+.home-posts-list {
+  margin-bottom: 60px; }
 
 .home-post {
   display: inline-block;
@@ -540,24 +576,63 @@ iframe[src*="youtube.com/embed"] {
   .home-post:nth-child(n+4) {
     z-index: 14; }
 
+.home-post--affixed {
+  z-index: 0 !important; }
+
+.home-post--statement {
+  background-color: #276CB9;
+  height: 300px; }
+
 .home-post-link {
   display: inline-block;
-  max-width: 100%;
+  max-width: 100%; }
+
+.home-post-wrapper {
+  position: relative;
   border: 12px solid #FFF;
   -webkit-transition: border-color 100ms linear;
   transition: border-color 100ms linear; }
-  .home-post-link:hover, .home-post-link:focus {
-    border-color: #0047A0;
-    -webkit-transition: border-color 200ms ease-in-out;
-    transition: border-color 200ms ease-in-out; }
+
+.home-post-overlay-excerpt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "ITC Franklin Gothic Medium";
+  font-size: 22px;
+  background-color: transparent;
+  -webkit-transition: background-color 100ms ease-in-out;
+  transition: background-color 100ms ease-in-out; }
+  .home-post-overlay-excerpt p {
+    margin: 0; }
+
+.post-excerpt-table {
+  height: 100%;
+  width: 100%; }
+  .post-excerpt-table td {
+    vertical-align: middle;
+    padding: 10px; }
 
 .home-post-image {
   display: block;
   max-width: 100%; }
 
+.home-post-link:hover .home-post-wrapper, .home-post-link:focus .home-post-wrapper {
+  border-color: #0047A0;
+  -webkit-transition: border-color 200ms ease-in-out;
+  transition: border-color 200ms ease-in-out; }
+.home-post-link:hover .home-post-overlay-excerpt, .home-post-link:focus .home-post-overlay-excerpt {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out; }
+
 @media screen and (min-width: 768px) {
   .home-post {
-    width: 40%;
+    width: 45%;
     text-align: none; } }
 
 @media screen and (max-width: 768px) {

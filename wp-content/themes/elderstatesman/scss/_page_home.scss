@@ -1,3 +1,9 @@
+$home-post-border-width: 12px;
+
+.home-posts-list {
+  margin-bottom: 60px;
+}
+
 .home-post {
   display: inline-block;
   position: relative;
@@ -12,16 +18,51 @@
   }
 }
 
+.home-post--affixed {
+  z-index: 0 !important;
+}
+
+.home-post--statement {
+  background-color: $elder-sky-blue;
+  height: 300px;
+}
+
 .home-post-link {
   display: inline-block;
   max-width: 100%;
-  border: 12px solid $white;
-  transition: border-color 100ms linear;
+}
 
-  &:hover, 
-  &:focus {
-    border-color: #0047A0;
-    transition: border-color 200ms ease-in-out;
+.home-post-wrapper {
+  position: relative;
+  border: $home-post-border-width solid $white;
+  transition: border-color 100ms linear;
+}
+
+.home-post-overlay-excerpt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "ITC Franklin Gothic Medium";
+  font-size: $font-size-h3 - 4px;
+  background-color: transparent;
+  transition: background-color 100ms ease-in-out;
+
+  p {
+    margin: 0;
+  }
+}
+
+.post-excerpt-table {
+  height: 100%;
+  width: 100%;
+  td {
+    vertical-align: middle;
+    padding: 10px;
   }
 }
 
@@ -30,9 +71,28 @@
   max-width: 100%;
 }
 
+// Hover styles for the post
+
+.home-post-link {
+  &:hover,
+  &:focus {
+    .home-post-wrapper{
+      border-color: #0047A0;
+      transition: border-color 200ms ease-in-out;      
+    }
+    .home-post-overlay-excerpt {
+      background-color: transparentize($black, 0.5);
+      transition: background-color 200ms ease-in-out; 
+    }
+  }
+}
+
 @media screen and (min-width: $screen-ipad-portrait) {
   .home-post {
-    width: 40%;
+    width: 45%;
     text-align: none;
+    // &:nth-child(2n + 1) {
+    //   margin-right: 2%;
+    // }
   }
 }

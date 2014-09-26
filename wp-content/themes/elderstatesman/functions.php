@@ -15,10 +15,14 @@ if(WP_DEBUG){
  */
 function elderstatesman_setup(){
 
-  // Enable support for Post Thumbnails, and declare two sizes.
+  // Enable support for Post Thumbnails
   add_theme_support( 'post-thumbnails' );
 
-  add_image_size( 'home-thumb', 360);
+  // Register the sidebar menu
+  register_nav_menu( 'sidebar', 'Lefthand sidebar' );
+
+  // Add thumbnail size for the homepage
+  add_image_size( 'home-thumb', 700);
 
 }
 add_action( 'after_setup_theme', 'elderstatesman_setup' );
@@ -65,3 +69,34 @@ function elderstatesman_wp_title( $title, $sep ) {
   return $title;
 }
 add_filter( 'wp_title', 'elderstatesman_wp_title', 10, 2 );
+
+
+/**
+ * Removes inline width attributes for div that wraps images with captions
+ *
+ */
+function fixed_img_caption_shortcode($attr, $content = null) {
+     if ( ! isset( $attr['caption'] ) ) {
+         if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
+         $content = $matches[1];
+         $attr['caption'] = trim( $matches[2] );
+         }
+     }
+     $output = apply_filters( 'img_caption_shortcode', '', $attr, $content );
+         if ( $output != '' )
+         return $output;
+     extract( shortcode_atts(array(
+     'id'      => '',
+     'align'   => 'alignnone',
+     'width'   => '',
+     'caption' => ''
+     ), $attr));
+     if ( 1 > (int) $width || empty($caption) )
+     return $content;
+     if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+     return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
+     . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
+}
+
+add_shortcode( 'wp_caption', 'fixed_img_caption_shortcode' );
+add_shortcode( 'caption', 'fixed_img_caption_shortcode' );

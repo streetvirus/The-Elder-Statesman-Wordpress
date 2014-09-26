@@ -43,7 +43,7 @@
       }
   }
 
-    > ul {
+    ul.menu {
       font-size: 1.15em;
     }
     ul {
@@ -75,7 +75,8 @@
             opacity: 1;
           }
         }
-        .current {
+        .current,
+        .current-menu-item {
           > a {
             opacity: 1;
           }
@@ -89,7 +90,8 @@
     li:last-child {
       margin-bottom: 0;
     }
-    .current {
+    .current,
+    .current-menu-item {
 
       > a {
         opacity: 1;
@@ -118,7 +120,8 @@
       background: transparent;
     }
   
-    > ul {
+    > ul,
+    ul.menu {
       border: 1px solid $white;
       border-top: 0;
       display: none;

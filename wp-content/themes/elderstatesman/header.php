@@ -51,20 +51,9 @@
                   Navigation
                 </div>
               </div>
-              <ul>
-                <li>
-                  <a href="http://elder-statesman.com/shop/">Shop</a>
-                </li>
-                <li class="current">
-                  <a href="/">Journal</a>
-                </li>
-                <li>
-                  <a href="http://elder-statesman.com/custom/">Custom</a>
-                </li>
-                <li>
-                  <a href="http://elder-statesman.com/about-us/">About Us</a>
-                </li>
-              <ul>
+
+              <?php wp_nav_menu( array( 'theme_location' => 'sidebar', 'container_class' => 'sidebar-menu-container' ) ); ?>
+
             </div>
           </div>
 
