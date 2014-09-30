@@ -28,7 +28,7 @@ get_header();
             <?php the_content(); ?>
           </div>
 
-          <?php the_tags('<div class="post-tags small">Tagged: ', ' • ', '</div>'); ?>
+          <?php the_tags('<div class="post-tags">Tagged: ', ' • ', '</div>'); ?>
         
         </article>
 

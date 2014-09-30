@@ -30,6 +30,11 @@
   margin: 20px 0;
 }
 
+.post-tags {
+  font-size: $font-size-small;
+  line-height: $font-size-small + 6px;
+}
+
 iframe[src*="youtube.com/embed"],
 iframe[src*="player.vimeo"] {
   display:block;
