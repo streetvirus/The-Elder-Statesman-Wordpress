@@ -1,9 +1,5 @@
 $home-post-border-width: 12px;
 
-.home-posts-list {
-  margin-bottom: 60px;
-}
-
 .home-post {
   display: inline-block;
   position: relative;
@@ -88,9 +84,30 @@ $home-post-border-width: 12px;
   }
 }
 
+// Home page infinite scroll
+#infscr-loading {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: -60px;
+  img {
+    display: none;
+  }
+}
+
+.home-navigation {
+  padding: 10px 0 25px;
+}
+
 @media screen and (min-width: $screen-ipad-portrait) {
+  .home-posts-list {
+    margin-bottom: 60px;
+  }
   .home-post {
     width: 45%;
     text-align: none;
+  }
+  #infscr-loading {
+    bottom: -110px;
   }
 }
