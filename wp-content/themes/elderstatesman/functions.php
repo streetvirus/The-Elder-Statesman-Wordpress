@@ -116,11 +116,30 @@ function elder_paging_nav(){
     return;
   }
 
-  echo '<div class="navigation" style="text-align: center">';
+  echo '<div class="navigation text-center">';
   posts_nav_link( ' - ', '↤ Previous', 'Next ↦' );
   echo '</div>';
 
 }
+
+function elder_home_nav(){
+  global $wp_query, $wp_rewrite;
+
+  if($wp_query->max_num_pages < 2) {
+    return;
+  }
+
+  echo '<div class="navigation home-navigation text-center">';
+  next_posts_link('More Posts');
+  echo '</div>';
+}
+
+// add_filter('next_posts_link_attributes', 'posts_link_attributes');
+// add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+// function posts_link_attributes() {
+//     return 'class="styled-button"';
+// }
 
 
 /**

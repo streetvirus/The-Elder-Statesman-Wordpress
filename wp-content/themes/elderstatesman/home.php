@@ -54,7 +54,7 @@ get_header();
 
         </div>
         
-        <?php elder_paging_nav(); ?>
+        <?php elder_home_nav(); ?>
 
       <?php endif;
 
