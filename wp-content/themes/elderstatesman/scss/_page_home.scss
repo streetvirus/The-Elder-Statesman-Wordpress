@@ -7,6 +7,7 @@ $home-post-border-width: 12px;
 .home-post {
   display: inline-block;
   position: relative;
+  vertical-align: top;
   margin-bottom: 10px;
   width: 100%;
   text-align: center;
@@ -47,7 +48,7 @@ $home-post-border-width: 12px;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: "ITC Franklin Gothic Medium";
+  font-family: $font-franklin-med;
   font-size: $font-size-h3 - 4px;
   background-color: transparent;
   transition: background-color 100ms ease-in-out;
@@ -91,8 +92,5 @@ $home-post-border-width: 12px;
   .home-post {
     width: 45%;
     text-align: none;
-    // &:nth-child(2n + 1) {
-    //   margin-right: 2%;
-    // }
   }
 }

@@ -37,7 +37,7 @@ get_header();
                           <tbody>
                             <tr>
                               <td>
-                                <?php has_excerpt() ? the_excerpt() : the_title(); ?>                          
+                                <?php get_field('short_title') ? the_field('short_title') : (has_excerpt() ? the_excerpt() : the_title()); ?> 
                               </td>
                             </tr>
                           </tbody>
@@ -54,11 +54,7 @@ get_header();
 
         </div>
         
-        <?php if($wp_query->max_num_pages > 1):?>
-          <div class="navigation" style="text-align: center;">
-            <?php posts_nav_link( ' - ', '« Previous', 'Next »' ); ?> 
-          </div>
-        <?php endif; ?>
+        <?php elder_paging_nav(); ?>
 
       <?php endif;
 

@@ -13,7 +13,7 @@ if(WP_DEBUG){
  * Set up theme defaults and registers support for various WordPress features.
  *
  */
-function elderstatesman_setup(){
+function elder_setup(){
 
   // Enable support for Post Thumbnails
   add_theme_support( 'post-thumbnails' );
@@ -25,12 +25,12 @@ function elderstatesman_setup(){
   add_image_size( 'home-thumb', 700);
 
 }
-add_action( 'after_setup_theme', 'elderstatesman_setup' );
+add_action( 'after_setup_theme', 'elder_setup' );
 
 /**
  * Enqueue scripts and styles for the front end.
  */
-function elderstatesman_scripts() {
+function elder_scripts() {
 
   // Load our main stylesheet.
   wp_enqueue_style( 'elderstatesman-style', get_stylesheet_uri() );
@@ -44,7 +44,7 @@ function elderstatesman_scripts() {
   wp_enqueue_script( 'elderstatesman-script', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '20140616', true );
 
 }
-add_action( 'wp_enqueue_scripts', 'elderstatesman_scripts' );
+add_action( 'wp_enqueue_scripts', 'elder_scripts' );
 
 
 /**
@@ -56,7 +56,7 @@ add_action( 'wp_enqueue_scripts', 'elderstatesman_scripts' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function elderstatesman_wp_title( $title, $sep ) {
+function elder_wp_title( $title, $sep ) {
   global $paged, $page;
 
   if ( is_feed() ) {
@@ -68,7 +68,59 @@ function elderstatesman_wp_title( $title, $sep ) {
 
   return $title;
 }
-add_filter( 'wp_title', 'elderstatesman_wp_title', 10, 2 );
+add_filter( 'wp_title', 'elder_wp_title', 10, 2 );
+
+
+/**
+ * Custom excerpt length for displaying content throughout the site
+ */
+function elder_excerpt_length( $length ) {
+  return 40;
+}
+add_filter( 'excerpt_length', 'elder_excerpt_length', 999 );
+
+/**
+ * Custom excerpt appended 'more'
+ */
+function elder_excerpt_more( $more ) {
+  return '...';
+}
+add_filter('excerpt_more', 'elder_excerpt_more');
+
+/**
+ * Prints the date for a post with the month + date linkable to the moth archive and the year linked to the yearly archive
+ * Date looks like - "September 21, 2014"
+ */
+function elder_linkable_date(){
+  global $year, $currentmonth;
+
+  printf('<a href="%1$s" title="View posts from %2$s %3$s">',
+    get_month_link($year, $currentmonth),
+    get_the_date('F'),
+    get_the_date('Y')
+  );
+  echo get_the_date('F').' '.get_the_date('j');
+  echo '</a>, ';
+  printf('<a href="%1$s" title="View posts from %2$s">',
+    get_year_link($year),
+    get_the_date('Y')
+  );
+  echo get_the_date('Y');
+  echo '</a>';
+}
+
+function elder_paging_nav(){
+  global $wp_query, $wp_rewrite;
+
+  if($wp_query->max_num_pages < 2) {
+    return;
+  }
+
+  echo '<div class="navigation" style="text-align: center">';
+  posts_nav_link( ' - ', '↤ Previous', 'Next ↦' );
+  echo '</div>';
+
+}
 
 
 /**

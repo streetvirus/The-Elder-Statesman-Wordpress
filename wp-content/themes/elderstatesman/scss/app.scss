@@ -8,6 +8,7 @@ NOTE: Theme stylesheet is compiled using sass.  Don't edit style.css in the them
 */
 
 @import "variables";
+@import "mixins";
 @import "fonts";
 
 @import "reset";
@@ -15,11 +16,13 @@ NOTE: Theme stylesheet is compiled using sass.  Don't edit style.css in the them
 @import "base";
 @import "grid";
 @import "layout";
+@import "utilities";
 
 @import "nav";
 @import "header";
 
 @import "post";
+@import "page";
 @import "wp";
 
 @import "page_home";

@@ -1,0 +1,9 @@
+@each $alignment in (left, right, center) {
+  .text-#{$alignment}) {
+    text-align: #{$alignment};      
+  }
+}
+
+.small {
+  font-size: $font-size-small;
+}

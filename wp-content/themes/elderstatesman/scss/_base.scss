@@ -51,8 +51,8 @@ a,
 a:active, 
 a:visited { 
   color: $white; 
-  text-decoration:none; 
-  transition: color 100ms linear 0, opacity 100ms linear 0;
+  text-decoration: none;
+  transition: color 100ms linear 0, opacity 100ms linear 0, border-color 100ms linear;
 }
 
 a {
@@ -79,6 +79,11 @@ p {
   margin: 0 0 $line-height-computed;;
 }
 
-b, strong {
+b, strong, .strong {
   font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

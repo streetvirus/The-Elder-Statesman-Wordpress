@@ -117,8 +117,8 @@ body {
 a, a:active, a:visited {
   color: #FFF;
   text-decoration: none;
-  -webkit-transition: color 100ms linear 0, opacity 100ms linear 0;
-  transition: color 100ms linear 0, opacity 100ms linear 0; }
+  -webkit-transition: color 100ms linear 0, opacity 100ms linear 0, border-color 100ms linear;
+  transition: color 100ms linear 0, opacity 100ms linear 0, border-color 100ms linear; }
 
 a:hover, a:active {
   color: #FFF;
@@ -136,8 +136,12 @@ ol, ul {
 p {
   margin: 0 0 21px; }
 
-b, strong {
+b, strong, .strong {
   font-weight: bold; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 /*
   Simple Grid
@@ -275,9 +279,6 @@ body {
   width: 100%;
   z-index: 2; }
 
-.page {
-  padding: 0 40px !important; }
-
 .page-print, .page-empty, .page-popup {
   background: #FFF;
   padding: 25px 30px;
@@ -374,6 +375,18 @@ body.fixed .col2-left-layout .col-main {
 .col4-set .col-4 {
   float: right;
   width: 23.5%; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.small {
+  font-size: 12.75px; }
 
 .left-nav {
   font-family: "ITC Franklin Gothic Demi", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -503,11 +516,16 @@ header {
     -webkit-transform: translateZ(0);
     transform: translateZ(0); } }
 
-.post img {
-  max-width: 100%;
-  height: auto; }
+.post {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #FFF;
+  border-color: rgba(255, 255, 255, 0.3); }
+  .post img {
+    max-width: 100%;
+    height: auto; }
 
-.post-title {
+.post-title, .page-title {
   margin-bottom: 40px;
   padding-bottom: 12px;
   border-bottom: 1px solid #FFF;
@@ -531,6 +549,43 @@ iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
 @media screen and (min-width: 768px) {
   iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
     max-height: none; } }
+
+.page-listed-posts {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #FFF;
+  border-color: rgba(255, 255, 255, 0.3); }
+
+.page-subtitle {
+  margin-bottom: 6px; }
+
+.page-listed-post-meta {
+  font-size: 13px;
+  margin-bottom: 10px; }
+
+.page-listed-post {
+  margin-bottom: 30px;
+  *zoom: 1; }
+  .page-listed-post:before, .page-listed-post:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .page-listed-post:after {
+    clear: both; }
+
+.page-listed-post-thumb {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 0;
+  width: 150px;
+  text-align: center; }
+  .page-listed-post-thumb img {
+    border-radius: 2px; }
+
+.page-listed-post-content {
+  margin-bottom: 10px; }
+  .page-listed-post-content p:last-child {
+    margin-bottom: 0; }
 
 .alignleft {
   float: left;
@@ -564,6 +619,7 @@ iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
 .home-post {
   display: inline-block;
   position: relative;
+  vertical-align: top;
   margin-bottom: 10px;
   width: 100%;
   text-align: center; }
@@ -602,7 +658,7 @@ iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: "ITC Franklin Gothic Medium";
+  font-family: "ITC Franklin Gothic Medium", "ITC Franklin Gothic Demi", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 22px;
   background-color: transparent;
   -webkit-transition: background-color 100ms ease-in-out;

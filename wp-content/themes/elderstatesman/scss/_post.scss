@@ -1,13 +1,18 @@
 // Content on the individual post page
 
 .post {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $white;
+  border-color: transparentize($white, 0.7);
   img {
     max-width: 100%;
     height: auto;
   }
 }
 
-.post-title {
+.post-title,
+.page-title {
   margin-bottom: 40px;
   padding-bottom: 12px;
   border-bottom: 1px solid $white;

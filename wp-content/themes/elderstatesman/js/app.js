@@ -1,3 +1,13 @@
+;(function($){
+
+    //mobile nav
+    $(".nav-button").on('click', function() {
+      $(".left-nav").find("ul.menu").slideToggle();
+    });
+
+
+
+})(jQuery);
 (function($){
 
     function getRandomInt(min, max) {
@@ -39,13 +49,7 @@
       
     }
 
-    //mobile nav
-    $(".nav-button").on('click', function() {
-      $(".left-nav").find("ul.menu").slideToggle();
-    });
-
-    
-    if($('body').is('.home')){
+    function homePage(){
 
       $('body').imagesLoaded( homeImagesLoadedCallback );
 
@@ -67,5 +71,6 @@
 
     }
 
+    if($('body').is('.home')) homePage();
 
 })(jQuery)
