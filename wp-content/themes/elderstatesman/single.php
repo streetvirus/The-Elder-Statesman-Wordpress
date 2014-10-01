@@ -32,6 +32,8 @@ get_header();
         
         </article>
 
+        <?php elder_post_siblings_links(); ?>
+
       <?php endwhile;
 
     endif;

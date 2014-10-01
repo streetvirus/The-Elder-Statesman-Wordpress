@@ -41,8 +41,13 @@
         
           <div class="col-left sidebar col-2-12">
             <div class="left-nav">
-              <div class="nav-button">
-                <div class="nav-button-inner">
+              <div class="desktop-nav-button">
+                <div class="nav-button-burger-line"></div>
+                <div class="nav-button-burger-line"></div>
+                <div class="nav-button-burger-line"></div>
+              </div>
+              <div class="mobile-nav-button">
+                <div class="mobile-nav-button-inner">
                   <div class="menu-icon">
                     <div></div>
                     <div></div>

@@ -1,8 +1,36 @@
 ;(function($){
 
     //mobile nav
-    $(".nav-button").on('click', function() {
+    $(".mobile-nav-button").on('click', function() {
       $(".left-nav").find("ul.menu").slideToggle();
+    });
+
+    $('.desktop-nav-button').on('click', function(){
+      var $sidebarMenuContainer = $('.sidebar-menu-container');
+
+      var isOpen = ($sidebarMenuContainer.data('is-open') || false);
+
+      if(isOpen){
+        $sidebarMenuContainer.animate({
+          opacity: '0',
+          top: '-=10px'
+        }, 200, function(){
+          $sidebarMenuContainer.css({
+            'visibility': 'invisible'
+          }).data('is-open', !isOpen);
+        });
+      }
+      else {
+        $sidebarMenuContainer.css({
+          'visibility': 'visible'
+        }).animate({
+          opacity: '1',
+          top: '+=10px'
+        }, 200, function(){
+          $sidebarMenuContainer.data('is-open', !isOpen);
+        });
+      }
+
     });
 
 
@@ -74,12 +102,10 @@
       $('#home-posts-list').imagesLoaded( function(){
 
         $('#home-posts-list').masonry({
-          gutter: 50,
+          gutter: 30,
           itemSelector: '.home-post',
           columnWidth: 30
         }); 
-
-        shufflePosts( $('.home-post:not(.home-post--affixed)') );
 
       });
 
@@ -109,7 +135,6 @@
 
         $('#home-posts-list').imagesLoaded( function(){
           $('#home-posts-list').masonry('appended', $(data.newElements));
-          shufflePosts( $(data.newElements) );
         });
 
         // Reset the css for the navigation since we hid it on click

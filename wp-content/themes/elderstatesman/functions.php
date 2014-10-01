@@ -134,6 +134,13 @@ function elder_home_nav(){
   echo '</div>';
 }
 
+function elder_post_siblings_links(){
+  echo '<div class="post-siblings-links">';
+  previous_post_link('<div class="post-siblings-link-prev">%link</div>', '↤ %title');
+  next_post_link('<div class="post-siblings-link-next">%link</div>', '%title ↦');
+  echo '</div>';
+}
+
 // add_filter('next_posts_link_attributes', 'posts_link_attributes');
 // add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 

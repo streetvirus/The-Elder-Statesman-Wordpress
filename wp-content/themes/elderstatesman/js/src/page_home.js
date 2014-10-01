@@ -64,12 +64,10 @@
       $('#home-posts-list').imagesLoaded( function(){
 
         $('#home-posts-list').masonry({
-          gutter: 50,
+          gutter: 30,
           itemSelector: '.home-post',
           columnWidth: 30
         }); 
-
-        shufflePosts( $('.home-post:not(.home-post--affixed)') );
 
       });
 
@@ -99,7 +97,6 @@
 
         $('#home-posts-list').imagesLoaded( function(){
           $('#home-posts-list').masonry('appended', $(data.newElements));
-          shufflePosts( $(data.newElements) );
         });
 
         // Reset the css for the navigation since we hid it on click
