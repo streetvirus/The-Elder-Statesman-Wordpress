@@ -39,18 +39,15 @@ html {
 body {
   height: 100%;
   overflow-x: hidden;
-  background-color: $elder-sky-blue;
-  color: $white;
-  background-image: url('./images/sky-background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: $elder-gray;
+  color: $font-color-default;
   -webkit-font-smoothing: antialiased;
 }
 
 a, 
 a:active, 
 a:visited { 
-  color: $white; 
+  color: $font-color-default; 
   text-decoration: none;
   transition: color 100ms linear 0, opacity 100ms linear 0, border-color 100ms linear;
 }
@@ -58,12 +55,12 @@ a:visited {
 a {
   &:hover, 
   &:active {
-    color: $white;
+    color: $font-color-default;
     outline: none;
     text-decoration: underline;
   }
   &:link {
-    -webkit-tap-highlight-color: $white;
+    -webkit-tap-highlight-color: $font-color-default;
   }
 }
 
