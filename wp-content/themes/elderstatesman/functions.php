@@ -22,7 +22,7 @@ function elder_setup(){
   register_nav_menu( 'sidebar', 'Lefthand sidebar' );
 
   // Add thumbnail size for the homepage
-  add_image_size( 'home-thumb', 700);
+  add_image_size( 'home-thumb', 450, 450, true );
 
 }
 add_action( 'after_setup_theme', 'elder_setup' );
@@ -34,12 +34,6 @@ function elder_scripts() {
 
   // Load our main stylesheet.
   wp_enqueue_style( 'elderstatesman-style', get_stylesheet_uri() );
-
-  if(is_home()){
-    wp_enqueue_script( 'masonry-script', get_template_directory_uri() . '/js/libs/jquery.masonry.2.1.08.min.js', array( 'jquery' ), '20140616', true );
-  }
-
-  wp_enqueue_script( 'images-loaded-script', get_template_directory_uri() . '/js/libs/images.loaded.pkgd.min.js', array( 'jquery' ), '20140616', true );
 
   wp_enqueue_script( 'elderstatesman-script', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '20140616', true );
 

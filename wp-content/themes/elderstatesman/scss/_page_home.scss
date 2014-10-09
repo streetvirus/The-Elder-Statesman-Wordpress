@@ -1,11 +1,13 @@
 $home-post-border-width: 12px;
 
 .home-post {
-  display: inline-block;
+  display: block;
   position: relative;
   vertical-align: top;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
+  padding: 0 5px;
   width: 100%;
+  max-width: 450px;
   text-align: center;
 
   @for $i from 1 through 4 {
@@ -17,11 +19,6 @@ $home-post-border-width: 12px;
 
 .home-post--affixed {
   z-index: 0 !important;
-}
-
-.home-post--statement {
-  background-color: $elder-sky-blue;
-  height: 300px;
 }
 
 .home-post-link {
@@ -105,10 +102,18 @@ $home-post-border-width: 12px;
     margin-bottom: 60px;
   }
   .home-post {
-    width: 45%;
+    width: 50%;
+    display: inline-block;
+    float: left;
     text-align: none;
   }
   #infscr-loading {
     bottom: -110px;
+  }
+}
+
+@media screen and (min-width: $screen-ipad-landscape) {
+  .home-post {
+    width: 33%;
   }
 }

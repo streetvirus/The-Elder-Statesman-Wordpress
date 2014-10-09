@@ -4,34 +4,6 @@
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-
-    /*
-     * Shuffles elements by adding or subtracting a small number of pixels from the top and left/right side
-     * Shuffling is turned off for small screens, pass in 'true' as the 2nd arg to turn it on
-     */
-    function shufflePosts($posts, forceShuffle) {
-
-      if( typeof forceShuffle == 'undefined') forceShuffle = false;
-
-      if($(window).innerWidth() > 768 || forceShuffle){
-
-        $posts.each(function(i, el){
-          var newTop = getRandomInt(10, 60),
-              newSide = getRandomInt(-50, 50),
-              side = i % 2 ? 'left' : 'right',
-              newCSS = {};
-
-          newCSS['top'] = "+=" + newTop;
-          newCSS[side]  = "+=" + newSide;
-
-          $(el).css( newCSS );            
-
-        });
-
-      }
-
-    }
-
     function homePage(){
 
       /*
@@ -57,20 +29,6 @@
       });
 
 
-      /*
-       * First time images are loaded on the page, initialize masonry and shuffle the posts around
-       */ 
-
-      $('#home-posts-list').imagesLoaded( function(){
-
-        $('#home-posts-list').masonry({
-          gutter: 30,
-          itemSelector: '.home-post',
-          columnWidth: 30
-        }); 
-
-      });
-
       $('.home-navigation').on('click', 'a', function(){
         $('.home-navigation').fadeTo(200, 0, function(){
           $(this).css('visibility', 'hidden');
@@ -94,10 +52,6 @@
           data.newElements.shift();
           $first.remove();
         }
-
-        $('#home-posts-list').imagesLoaded( function(){
-          $('#home-posts-list').masonry('appended', $(data.newElements));
-        });
 
         // Reset the css for the navigation since we hid it on click
         $('.home-navigation').css({

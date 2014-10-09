@@ -4,10 +4,10 @@ get_header();
 
       if ( have_posts() ) : ?>
         
-        <div id="home-posts-list" class="home-posts-list">
+        <div id="home-posts-list" class="home-posts-list clearfix">
 
           <div class="home-post home-post--affixed home-post--statement">
-              <div class="home-post-wrapper" style="height: 100%;">
+              <div class="home-post-wrapper">
                 <div class="home-post-overlay-excerpt">
                   <table class="post-excerpt-table">
                     <tbody>
@@ -19,6 +19,7 @@ get_header();
                     </tbody>
                   </table>
                 </div>
+                <img src="<?php echo get_template_directory_uri().'/images/home-blue-square.jpg'; ?>" class="home-post-image">
               </div>
           </div>
 

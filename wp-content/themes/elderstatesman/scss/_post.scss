@@ -57,6 +57,8 @@ iframe[src*="player.vimeo"] {
 @media screen and (min-width: $screen-ipad-portrait) {
   iframe[src*="youtube.com/embed"],
   iframe[src*="player.vimeo"] { 
+    width: 80%;
+    max-width: 700px;
     max-height: none;
   }
 }
