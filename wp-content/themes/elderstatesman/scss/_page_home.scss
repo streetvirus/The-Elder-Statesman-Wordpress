@@ -28,8 +28,8 @@ $home-post-border-width: 12px;
 
 .home-post-wrapper {
   position: relative;
-  border: $home-post-border-width solid $white;
-  transition: border-color 100ms linear;
+  // border: $home-post-border-width solid $white;
+  // transition: border-color 100ms linear;
 }
 
 .home-post-overlay-excerpt {
@@ -72,8 +72,8 @@ $home-post-border-width: 12px;
   &:hover,
   &:focus {
     .home-post-wrapper{
-      border-color: #0047A0;
-      transition: border-color 200ms ease-in-out;      
+      // border-color: #0047A0;
+      // transition: border-color 200ms ease-in-out;      
     }
     .home-post-overlay-excerpt {
       background-color: transparentize($black, 0.5);

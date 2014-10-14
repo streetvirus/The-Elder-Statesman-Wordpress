@@ -74,8 +74,12 @@
 }
 
 .col2-left-layout .col-main {
-  max-width: 1000px;
+  max-width: 600px;
   padding-bottom: 30px;
+}
+
+body.home .col2-left-layout .col-main {
+  max-width: 1000px;
 }
 
 body.fixed .col2-left-layout .col-main {
