@@ -589,14 +589,11 @@ header {
 iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
   display: block;
   width: 100%;
-  margin: 0 auto;
-  max-height: 250px; }
+  margin: 0 auto; }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   iframe[src*="youtube.com/embed"], iframe[src*="player.vimeo"] {
-    width: 80%;
-    max-width: 700px;
-    max-height: none; } }
+    max-height: 280px; } }
 
 article.post + .post-siblings-links {
   margin-top: -30px; }
