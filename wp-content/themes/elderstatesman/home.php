@@ -34,15 +34,17 @@ get_header();
                   <a href="<?php the_permalink(); ?>" class="home-post-link" title="<?php the_title(); ?>">
                     <div class="home-post-wrapper">
                       <div class="home-post-overlay-excerpt">
-                        <table class="post-excerpt-table"> <?php // Use this for vertically centering the excerpt ?>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <?php get_field('short_title') ? the_field('short_title') : (has_excerpt() ? the_excerpt() : the_title()); ?> 
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                        <?php if( get_field('short_title') ):?>
+                          <table class="post-excerpt-table"> <?php // Use this for vertically centering the excerpt ?>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <?php the_field('short_title'); ?> 
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        <?php endif; ?>
                       </div>
                       <img src="<?php echo $home_thumb[0]; ?>" class="home-post-image">
                     </div>

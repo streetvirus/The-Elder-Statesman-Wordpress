@@ -44,29 +44,6 @@
 
     function homePage(){
 
-      /*
-       * Mouseover event for home posts.  
-       * Since they are shuffled / overlapping, animate the z-index on hover to bring it forward 
-       * Animate the z-index back into the original position on mouseout
-       */
-
-      $('#home-posts-list').on('mouseenter', '.home-post', function(){
-        var $self = $(this);
-        var ogZIndex = parseInt($self.css('z-index'), 10);
-
-        $self.animate({
-          'z-index' : ogZIndex + 10
-        }, 300);
-
-        $self.one('mouseleave', function(){
-          $self.animate({
-            'z-index' : ogZIndex
-          }, 100);
-        })
-
-      });
-
-
       $('.home-navigation').on('click', 'a', function(){
         $('.home-navigation').fadeTo(200, 0, function(){
           $(this).css('visibility', 'hidden');
