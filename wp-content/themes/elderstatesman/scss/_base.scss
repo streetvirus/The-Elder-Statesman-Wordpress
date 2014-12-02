@@ -84,3 +84,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  border-left: 2px solid darken($site-bg, 25%);
+}
