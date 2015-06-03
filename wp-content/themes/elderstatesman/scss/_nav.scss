@@ -5,25 +5,6 @@
   font-family: $font-franklin;
   font-size: 0.8em;
 
-  .desktop-nav-button {
-    position: absolute;
-    display: none;
-    height: 30px;
-    width: 30px;
-    margin: 0;
-    cursor: pointer;
-
-    .nav-button-burger-line {
-      width: 100%;
-      height: 2px;
-      background-color: lighten($black, 10%);
-      margin-bottom: 6px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   .mobile-nav-button {
     display: none;
       width: 100%;
@@ -170,16 +151,8 @@
   }
   .left-nav {
     position: fixed;
+    margin-top: 40px;
     -webkit-backface-visibility: hidden;
-    .desktop-nav-button {
-      display: block;
-    }
-    .sidebar-menu-container {
-      position: relative;
-      top: 20px;
-      opacity: 0;
-      visibility: hidden;
-    }
   }
   ul {
     display: block !important;
